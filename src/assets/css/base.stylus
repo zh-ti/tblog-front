@@ -1,0 +1,65 @@
+@import "//at.alicdn.com/t/font_2833717_kzxv4c05bas.css"
+
+@font-face {
+  font-family: "zhenghei";
+  src:url('~assets/font/ZhengHei.ttf')
+}
+
+@font-face {
+  font-family: "qiti";
+  src:url('~assets/font/ShangShouYuanQiTi.ttf')
+}
+
+flexbox($primary = center, $second = center, $direc = wrap)
+  display flex
+  flex-direction $direc
+  justify-content $primary
+  align-items $second
+
+minus($num)
+  0 - $num
+
+fullWindow($position = relative)
+  position: $position
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+
+fullBox($position = relative)
+  position: $position
+  top: 0
+  left: 0
+  width 100%
+  height 100%
+
+position($position = relative, $top = false, $left = false, $right = false, $bottom = false)
+  position: $position
+  if $top
+    top: $top
+  if $left
+    left: $left
+  if $right
+    right: $right
+  if $bottom
+    bottom: $bottom
+
+alignCenter($top = 50%, $left = 50%)
+  position: absolute
+  top: $top
+  left: $left
+  transform: translate(-50%, -50%)
+
+.clearfix::after
+  content: ''
+  display: block
+  clear: both
+
+headerHeight = 60px
+
+remainHeight()
+  100vh - headerHeight
+
+.button
+  border: none
+  outline: none
